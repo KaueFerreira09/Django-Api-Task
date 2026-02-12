@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tarefas</title>
+    <link rel="stylesheet" href="../static/tasks/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de Tarefas</h1>
+
+        <form method="POST">
+            {% csrf_token %}
+            <input type="text" name="title" placeholder="Nova tarefa" required>
+            <button type="submit">Adicionar</button>
+        </form>
+
+        <hr>
+
+        <ul>
+            {% for task in tasks %}
+                <li>
+                    <span class="{% if task.completed %}completed{% endif %}">
+                        {{ task.title }}
+                    </span>
+
+                    {% if not task.completed %}
+                        <a href="{% url 'task_complete' task.id %}">Marcar como concluída</a>
+                    {% endif %}
+
+                    <a href="{% url 'task_delete' task.id %}">Excluir</a>
+                </li>
+            {% empty %}
+                <li>Nenhuma tarefa encontrada.</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
