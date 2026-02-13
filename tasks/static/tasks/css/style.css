@@ -1,47 +1,54 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #f1f1f1;
+    margin: 0;
+    padding: 0;
+    background-color: black;
 }
 
 .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    margin: 20px auto;
+    max-width: 600px;
+    text-align: center;
 }
 
 h1 {
-    text-align: center;
-    margin-bottom: 20px;
+    margin: 30px 0;
+    font-size: 2em;
+    font-weight: bold;
+    color: purple;
 }
 
 form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    margin: 30px 0;
 }
 
 input[type="text"] {
+    width: 100%;
     padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    border: none;
+    font-size: 1em;
+    border: 1px solid rgb(242, 4, 242);
+    border-radius: 15px;
+    background-color: black;
+    color: violet;
     outline: none;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
-button {
-    padding: 10px 20px;
-    margin-top: 10px;
-    border-radius: 5px;
+button[type="submit"] {
+    width: 20%;
+    background-color: purple;
+    color: white;
+    padding: 10px;
+    font-size: 1em;
     border: none;
-    outline: none;
-    background-color: #4caf50;
-    color: #fff;
+    border-radius: 4px;
     cursor: pointer;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    margin-top: 10px;
+    transition: transform 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: rgba(128, 0, 128, 0.705);
+    transform: scale(1.05);
 }
 
 ul {
@@ -50,32 +57,47 @@ ul {
 }
 
 li {
-    margin-bottom: 10px;
+    border: 4px solid purple;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
 }
 
 li span {
-    padding: 5px 10px;
-    border-radius: 5px;
-    background-color: #4caf50;
-    color: #fff;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    color: turquoise;
+    font-weight: bold;
 }
 
 li span.completed {
-    background-color: #f44336;
+    text-decoration: line-through;
+    color: yellowgreen;
 }
 
 li a {
+    float: right;
+    margin-left: 10px;
     text-decoration: none;
-    color: #4caf50;
-    transition: color 0.3s ease;
-}
+    transition: transform 0.3s ease;
+}   
 
 li a:hover {
-    color: #fff;
+    transform: scale(1.05);
+   
 }   
 
 hr {
-    margin-top: 20px;    
+    margin: 20px 0;
+}   
+
+.completed {
+    /* text-decoration: line-through; */
+    color: #FFD700;
+    background-color: #C8A2C8;
+}   
+
+.completed:hover {
+    color: #008080;
+    text-decoration: none;
+    color: #FFD700;    
 }
